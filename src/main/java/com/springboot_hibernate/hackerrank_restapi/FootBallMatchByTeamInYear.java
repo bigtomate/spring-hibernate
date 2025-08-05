@@ -1,6 +1,5 @@
 package com.springboot_hibernate.hackerrank_restapi;
 
-import io.netty.util.internal.StringUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
 
