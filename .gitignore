@@ -1,51 +1,27 @@
-HELP.md
-HELP
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Build output
+/target/
+/build/
+/out/
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
+# IDE
+.idea/
 *.iml
-*.ipr
+*.swp
+*.swo
+.DS_Store
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# Log files
+*.log
 
-### VS Code ###
-.vscode/
+# Environment
+.env
+*.properties
+
+# Git sample hooks (from your error)
+*.sample
+hooks/
 .gitattributes
-applypatch-msg.sample
-config
 description
+config
 exclude
-fsmonitor-watchman.sample
 HEAD
-post-update.sample
-pre-applypatch.sample
-pre-commit.sample
-pre-merge-commit.sample
-pre-push.sample
-pre-receive.sample
-pre-rebase.sample
-prepare-commit-msg.sample
-push-to-checkout.sample
-update.sample
