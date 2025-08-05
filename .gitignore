@@ -32,20 +32,3 @@ build/
 
 ### VS Code ###
 .vscode/
-.gitattributes
-applypatch-msg.sample
-config
-description
-exclude
-fsmonitor-watchman.sample
-HEAD
-post-update.sample
-pre-applypatch.sample
-pre-commit.sample
-pre-merge-commit.sample
-pre-push.sample
-pre-receive.sample
-pre-rebase.sample
-prepare-commit-msg.sample
-push-to-checkout.sample
-update.sample
