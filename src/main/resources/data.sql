@@ -7,7 +7,7 @@ Syntax error in SQL statement "create table if not exists football_match ( id SE
 */
 create table if not exists foot_ball_match
 (
-      id SERIAL not null,
+      id BIGSERIAL not null,
       team varchar (100) not null,
       "year" integer not null,
       goal int,

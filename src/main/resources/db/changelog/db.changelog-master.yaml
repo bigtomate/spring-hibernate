@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: xingliu
+      changes:
+        - createTable:
+            tableName: foot_ball_match
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT  # ← Explicitly define as BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: team
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: "year"
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: goal
+                  type: INT
+              - column:
+                  name: draw
+                  type: INT
+              - column:
+                  name: inserted_at
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP
+  - include:
+      file: db/changelog/changes/insert-matches.yaml
+      relativeToChangelogFile: true

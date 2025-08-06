@@ -15,3 +15,13 @@ inserted_at timestamp default NOW(),
 primary key (id)
 );
 ```
+the **mockito-line** resolve the problem with builder in test. works in vscode
+```xml
+<dependency>
+<groupId>org.mockito</groupId>
+<artifactId>mockito-inline</artifactId>
+<version>5.2.0</version>
+<scope>test</scope>
+</dependency>
+```
+**h2 scope test** only if really running tests on h2. otherwise the liquid base changelog is required.

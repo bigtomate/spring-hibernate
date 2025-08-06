@@ -1,0 +1,19 @@
+- changeSet:
+    id: 1-data
+    author: xingliu
+    changes:
+      - insert:
+          tableName: foot_ball_match
+          columns:
+            - column:
+                name: team
+                value: Test
+            - column:
+                name: "year"
+                valueNumeric: 2011
+            - column:
+                name: goal
+                valueNumeric: 3
+            - column:
+                name: draw
+                valueNumeric: 1
