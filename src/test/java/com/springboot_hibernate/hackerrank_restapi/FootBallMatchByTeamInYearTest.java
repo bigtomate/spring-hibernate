@@ -2,9 +2,11 @@ package com.springboot_hibernate.hackerrank_restapi;
 
 import com.springboot_hibernate.entity.FootBallMatch;
 import com.springboot_hibernate.repository.FootBallMatchRepository;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 public class FootBallMatchByTeamInYearTest {
@@ -19,14 +21,14 @@ public class FootBallMatchByTeamInYearTest {
         totalGoals+= footBallMatchByTeamInYear.retrieveTotalGoalsInYear("Barcelona", 2011, "team2");
         totalGoals+= footBallMatchByTeamInYear.retrieveTotalGoalsInYear("Barcelona", 2011, "team1");
         System.out.println(String.format("total goals: %s in %s of %s", totalGoals, 2011, "Barcelona"));
-        FootBallMatch footBallMatch = FootBallMatch.builder().team("Barcelona").year(2011).goal(totalGoals).build();
+        FootBallMatch footBallMatch  = new FootBallMatch("Barcelona", 2011, totalGoals, null);
         footBallMatchRepository.save(footBallMatch);
         totalGoals = 0;
         totalGoals+= footBallMatchByTeamInYear.retrieveTotalGoalsInYear("Chelsea", 2011, "team2");
         totalGoals+= footBallMatchByTeamInYear.retrieveTotalGoalsInYear("Chelsea", 2011, "team1");
         System.out.println(String.format("total goals: %s in %s of %s", totalGoals, 2011, "Chelsea"));
 
-        footBallMatch = FootBallMatch.builder().team("Chelsea").year(2011).goal(totalGoals).build();
+        footBallMatch  = new FootBallMatch("Barcelona", 2011, totalGoals, null);
         footBallMatchRepository.save(footBallMatch);
     }
 
