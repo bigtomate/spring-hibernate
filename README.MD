@@ -25,3 +25,11 @@ the **mockito-line** resolve the problem with builder in test. works in vscode
 </dependency>
 ```
 **h2 scope test** only if really running tests on h2. otherwise the liquid base changelog is required.
+
+Caused by: org.springframework.beans.factory.BeanCreationException:
+Error creating bean with name 'liquibase':
+**Circular depends-on relationship between 'liquibase' and 'entityManagerFactory'**
+```properties in application.properties
+######### !!!! this must removed ##############
+#spring.jpa.defer-datasource-initialization=true
+```

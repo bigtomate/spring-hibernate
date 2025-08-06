@@ -2,11 +2,9 @@ package com.springboot_hibernate.hackerrank_restapi;
 
 import com.springboot_hibernate.entity.FootBallMatch;
 import com.springboot_hibernate.repository.FootBallMatchRepository;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 public class FootBallMatchByTeamInYearTest {

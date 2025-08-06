@@ -34,5 +34,5 @@ databaseChangeLog:
                   type: TIMESTAMP
                   defaultValueComputed: CURRENT_TIMESTAMP
   - include:
-      file: db/changelog/changes/insert-matches.yaml
+      file: /changes/insert-matches.yaml
       relativeToChangelogFile: true
