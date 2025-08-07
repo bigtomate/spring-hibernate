@@ -33,3 +33,5 @@ Error creating bean with name 'liquibase':
 ######### !!!! this must removed ##############
 #spring.jpa.defer-datasource-initialization=true
 ```
+h2 UI
+http://localhost:8081/h2-console/
