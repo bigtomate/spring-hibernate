@@ -1,3 +1,5 @@
+
+
 remember to put your package (hackerrank_restapi) under the root package com.springboot_hinernate,
 otherwise will have **problem with componentscan** !!!
 
