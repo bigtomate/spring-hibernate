@@ -35,3 +35,5 @@ Error creating bean with name 'liquibase':
 ```
 h2 UI
 http://localhost:8081/h2-console/
+
+**switch between h2 and local db** just in applicaiton.properties comment out the active profile

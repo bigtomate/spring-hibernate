@@ -10,12 +10,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.IOException;
+
 @SpringBootApplication
 public class SpringHiberateApplication  implements CommandLineRunner {
 
     @Autowired FootBallMatchByTeamInYear footBallMatchByTeamInYear;
 	@Autowired
 	FootBallMatchRepository footBallMatchRepository;
+
 
 	private Logger log = LoggerFactory.getLogger(this.getClass());
 	public static void main(String[] args) {
@@ -24,8 +27,8 @@ public class SpringHiberateApplication  implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) {
-		 testMatchedGoals();
+	public void run(String... args) throws IOException {
+		// testMatchedGoals();
 	}
 
 	private void testMatchedGoals()  {

@@ -25,5 +25,14 @@ create table if not exists foot_ball_match
       primary key (id)
   );
 
+   create table if not exists book
+  (
+      id BIGSERIAL not null,
+      name varchar (255) not null,
+      published timestamp,
+      primary key (id)
+  );
+
+
 insert into person(id, name, location, birth_date) values (10001, 'Xing','peterborough',NOW());
 
