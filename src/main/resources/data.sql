@@ -44,6 +44,8 @@ create table if not exists foot_ball_match
       primary key (id)
   );
 
+  CREATE UNIQUE INDEX if not exists uidx_division_date
+  ON holiday (division, date);
 
 insert into person(id, name, location, birth_date) values (10001, 'Xing','peterborough',NOW());
 

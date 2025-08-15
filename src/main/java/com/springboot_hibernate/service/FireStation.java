@@ -2,10 +2,12 @@ package com.springboot_hibernate.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.springboot_hibernate.dto.EventDTO;
 import com.springboot_hibernate.dto.HolidayDTO;
 import com.springboot_hibernate.entity.Holiday;
 import com.springboot_hibernate.exception.HolidayNotFoundException;
 import com.springboot_hibernate.repository.HolidayRepository;
+import jakarta.persistence.Tuple;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
@@ -15,10 +17,13 @@ import org.springframework.web.client.RestClient;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 @Service
 public class FireStation {
@@ -59,7 +64,9 @@ public class FireStation {
             throw new HolidayNotFoundException(String.format("no holiday found of the given region %s", region));
         }
         final HolidayDTO holiday = new ObjectMapper().convertValue(filtedResult, HolidayDTO.class);
-        List<Holiday> entities = holiday.getEvents().stream().map(eventDTO -> {
+        final List<Date> existingEntries = holidayRepository.retrieveExistingEntries(region);
+        List<Holiday> entities = holiday.getEvents().stream().filter(eventDTO -> eventDTO.getDate() != null
+                && !existingEntries.contains(Date.valueOf(eventDTO.getDate()))).map(eventDTO -> {
             Holiday holidayEntity = Holiday.builder().division(holiday.getDivision()).build();
             BeanUtils.copyProperties(eventDTO, holidayEntity);
             return holidayEntity;
