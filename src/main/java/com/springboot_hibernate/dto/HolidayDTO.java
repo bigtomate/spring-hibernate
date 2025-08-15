@@ -1,6 +1,9 @@
 package com.springboot_hibernate.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.OptBoolean;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,10 +12,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
 @ToString
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class HolidayDTO {
     @JsonProperty("division")
     private String division;
@@ -30,12 +38,4 @@ public class HolidayDTO {
                 "bunting": true
         },
         */
-}
-class EventDTO {
-
-    @JsonProperty("title")
-    private String title;
-    private String notes;
-    private Date date;
-    private Boolean bunting;
 }

@@ -33,6 +33,17 @@ create table if not exists foot_ball_match
       primary key (id)
   );
 
+     create table if not exists holiday
+  (
+      id SERIAL not null,
+      division varchar (255) not null,
+      date DATE,
+      title varchar (255),
+      notes varchar (255),
+      bunting boolean,
+      primary key (id)
+  );
+
 
 insert into person(id, name, location, birth_date) values (10001, 'Xing','peterborough',NOW());
 
